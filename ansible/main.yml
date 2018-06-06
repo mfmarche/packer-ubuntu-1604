@@ -14,3 +14,5 @@
         - wget
         - curl
         - vim
+        - snapd
+        - docker.io

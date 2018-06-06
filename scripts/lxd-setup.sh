@@ -1,6 +1,4 @@
 sudo apt-get -y install zfs lxd
-newgrp lxd
-
 sudo lxd init --auto --storage-backend zfs --storage-pool lxdpool --storage-create-loop 20
 
 sudo systemctl stop lxd-bridge

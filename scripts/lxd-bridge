@@ -39,16 +39,16 @@ LXD_IPV4_NAT="true"
 
 # IPv6
 ## IPv6 address (e.g. 2001:470:b368:4242::1)
-LXD_IPV6_ADDR="fd6a:8332:31f5:2f4e::1"
+LXD_IPV6_ADDR=""
 
 ## IPv6 CIDR mask (e.g. 64)
-LXD_IPV6_MASK="64"
+LXD_IPV6_MASK=""
 
 ## IPv6 network (e.g. 2001:470:b368:4242::/64)
-LXD_IPV6_NETWORK="fd6a:8332:31f5:2f4e::1/64"
+LXD_IPV6_NETWORK=""
 
 ## NAT IPv6 traffic
-LXD_IPV6_NAT="true"
+LXD_IPV6_NAT="false"
 
 # Run a minimal HTTP PROXY server
 LXD_IPV6_PROXY="false"
