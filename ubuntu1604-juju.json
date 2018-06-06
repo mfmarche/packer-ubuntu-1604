@@ -28,18 +28,7 @@
     {
         "type": "shell",
         "script": "scripts/juju-setup.sh",
-        "pause_before": "10s",
-        "expect_disconnect": "true"
-    },
-    {
-      "type": "shell",
-      "script": "scripts/get-install-osm.sh",
-      "pause_before": "10s"
-    },
-    {
-      "type": "shell",
-      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/cleanup.sh"
+        "pause_before": "10s"
     }
   ],
   "builders": [
@@ -89,7 +78,7 @@
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-ubuntu-16.04-amd64",
+      "vm_name": "packer-ubuntu-16.04-amd64-juju",
       "vboxmanage": [
         [
           "modifyvm",
@@ -108,8 +97,9 @@
   ],
   "post-processors": [
     {
-      "output": "builds/{{.Provider}}-osm.box",
-      "type": "vagrant"
+      "output": "builds/{{.Provider}}-juju.box",
+      "type": "vagrant",
+      "keep_input_artifact": true
     }
   ]
 }
